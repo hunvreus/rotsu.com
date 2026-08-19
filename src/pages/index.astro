@@ -1,0 +1,252 @@
+---
+import "@fontsource-variable/jetbrains-mono";
+import { ArrowUpRight } from "@lucide/astro";
+import "../styles/global.css";
+
+const products = [
+  {
+    name: "Pages CMS",
+    icon: "/products/pages.svg",
+    iconBg: "#27a879",
+    iconSize: "size-[18px]",
+    iconDimension: 18,
+    href: "https://pagescms.org/",
+    copy: "A CMS for sites that live in GitHub. Content stays in your repository, in the same files you already commit. Your editors get a real interface instead of a pull request.",
+    achievements: [
+      { label: "3.9K GitHub stars", href: "https://github.com/hunvreus/pagescms" },
+      { label: "7K+ installations", href: "https://pagescms.org/" },
+    ],
+  },
+  {
+    name: "Basecoat",
+    icon: "/products/basecoat.svg",
+    iconBg: "#1447e6",
+    iconSize: "size-[18px]",
+    iconDimension: 18,
+    href: "https://basecoatui.com/",
+    copy: "The shadcn/ui look and feel, in plain HTML and CSS. Drop the same components and design language into Django, Rails, Laravel, or a single HTML file.",
+    achievements: [
+      { label: "4.2K GitHub stars", href: "https://github.com/hunvreus/basecoat" },
+      { label: "370K+ npm downloads", href: "https://www.npmjs.com/package/basecoat-css" },
+    ],
+  },
+  {
+    name: "devpush",
+    icon: "/products/devpush.svg",
+    iconBg: "#d9dcd5",
+    iconSize: "size-4",
+    iconDimension: 16,
+    href: "https://devpu.sh/",
+    copy: "Push to deploy. Connect a GitHub repository and get builds, previews, and production deploys without maintaining the machinery underneath.",
+    achievements: [
+      { label: "4.7K GitHub stars", href: "https://github.com/hunvreus/devpush" },
+    ],
+  },
+  {
+    name: "heypi",
+    icon: "/products/heypi.svg",
+    iconBg: "#e3e6e8",
+    iconSize: "size-6",
+    iconDimension: 24,
+    invertIcon: true,
+    href: "https://heypi.dev/",
+    copy: "A team agent that lives in your chat, with sandboxed tools, approvals before anything sensitive runs, and an audit trail of what it did.",
+    achievements: [
+      { label: "GitHub", href: "https://github.com/hunvreus/heypi" },
+    ],
+  },
+  {
+    name: "Classy",
+    icon: "/products/classy.svg",
+    iconBg: "#00a6f4",
+    iconSize: "size-[18px]",
+    iconDimension: 18,
+    href: "https://classy.md/",
+    copy: "A Markdown workspace humans and agents can share. Write and edit together in documents that stay plain Markdown, with no proprietary format or lock-in.",
+    achievements: [],
+  },
+];
+
+const logos = [
+  ["OpenAI", "/logos/openai.svg"],
+  ["Vercel", "/logos/vercel.svg"],
+  ["Cloudflare", "/logos/cloudflare.svg"],
+  ["Supabase", "/logos/supabase.svg"],
+  ["ElevenLabs", "/logos/elevenlabs.svg"],
+  ["Pydantic", "/logos/pydantic.svg"],
+  ["Resend", "/logos/resend.svg"],
+  ["GitHub", "/logos/github.svg"],
+  ["Shopify", "/logos/shopify.svg"],
+  ["Microsoft", "/logos/microsoft.svg"],
+  ["Google", "/logos/google.svg"],
+  ["Amazon", "/logos/amazon.svg"],
+  ["Apple", "/logos/apple.svg"],
+  ["Meta", "/logos/meta.svg"],
+  ["Stripe", "/logos/stripe.svg"],
+  ["Netflix", "/logos/netflix.svg"],
+  ["Spotify", "/logos/spotify.svg"],
+];
+
+const linkClass = "inline-flex min-h-6 items-center gap-1 py-1 text-xs font-medium text-rotsu-text underline decoration-rotsu-rule underline-offset-4 hover:decoration-rotsu-muted";
+const secondaryButtonClass = "mt-8 inline-flex h-9 w-fit items-center border border-rotsu-rule px-3 text-xs font-medium text-rotsu-text hover:border-rotsu-muted";
+const primaryButtonClass = "mt-8 inline-flex h-9 w-fit items-center bg-rotsu-yellow px-3 text-xs font-medium text-rotsu-bg hover:bg-rotsu-text";
+const siteTitle = "Rotsu — Tools for builders";
+const siteDescription = "Rotsu builds tools for people who build things: design systems, content platforms, deployment software, AI agents, and knowledge tools.";
+const siteUrl = "https://rotsu.com/";
+const socialImageUrl = `${siteUrl}og.png`;
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Rotsu",
+  legalName: "Rotsu Pte. Ltd.",
+  url: siteUrl,
+  logo: `${siteUrl}rotsu-mark.svg`,
+  email: "hey@rotsu.com",
+  telephone: "+65 9777 9149",
+  founder: {
+    "@type": "Person",
+    name: "Ronan Berder",
+    url: "https://www.linkedin.com/in/ronanberder",
+  },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "68 Circular Road, #02-01",
+    addressLocality: "Singapore",
+    postalCode: "049422",
+    addressCountry: "SG",
+  },
+  sameAs: ["https://www.linkedin.com/in/ronanberder"],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={siteDescription} />
+    <meta name="author" content="Rotsu Pte. Ltd." />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#141512" />
+    <link rel="canonical" href={siteUrl} />
+    <link rel="icon" href="/rotsu-mark.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_SG" />
+    <meta property="og:site_name" content="Rotsu" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={siteDescription} />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:secure_url" content={socialImageUrl} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Rotsu — We create tools for builders" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={siteTitle} />
+    <meta name="twitter:description" content={siteDescription} />
+    <meta name="twitter:image" content={socialImageUrl} />
+    <meta name="twitter:image:alt" content="Rotsu — We create tools for builders" />
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)}></script>
+    <title>{siteTitle}</title>
+  </head>
+  <body>
+    <div class="mx-auto min-h-screen w-full max-w-5xl border-x border-rotsu-rule bg-rotsu-bg">
+      <header class="flex h-12 items-stretch border-b border-rotsu-rule">
+        <a class="grid aspect-square h-full place-items-center border-r border-rotsu-rule text-rotsu-text hover:bg-rotsu-yellow hover:text-rotsu-bg" href="#top" aria-label="Rotsu home">
+          <span class="rotsu-logo block size-[18px]"></span>
+        </a>
+        <nav class="ml-auto flex h-full items-stretch border-l border-rotsu-rule text-xs text-rotsu-muted" aria-label="Main navigation">
+          <a class="flex items-center px-3 hover:bg-rotsu-text/[0.03] hover:text-rotsu-text sm:px-5" href="#products">Products</a>
+          <a class="flex items-center border-l border-rotsu-rule px-3 hover:bg-rotsu-text/[0.03] hover:text-rotsu-text sm:px-5" href="#about">About</a>
+          <a class="flex items-center border-l border-rotsu-rule px-3 hover:bg-rotsu-text/[0.03] hover:text-rotsu-text sm:px-5" href="mailto:hey@rotsu.com">Contact</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="px-6 py-12 md:px-10 md:py-16">
+          <h1 class="max-w-4xl text-4xl leading-none font-medium tracking-tighter uppercase md:text-6xl">We create tools for builders</h1>
+          <p class="mt-6 max-w-3xl text-sm leading-6 text-rotsu-muted">Rotsu makes software for people who build things; developer tools, knowledge systems, and AI agents that take real actions with real guardrails.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a class="inline-flex h-10 items-center bg-rotsu-yellow px-4 text-sm font-medium text-rotsu-bg hover:bg-rotsu-text" href="mailto:hey@rotsu.com">Contact us</a>
+            <a class="inline-flex h-10 items-center border border-rotsu-rule px-4 text-sm font-medium text-rotsu-text hover:border-rotsu-muted" href="#products">Explore products</a>
+          </div>
+        </section>
+
+        <section id="products" class="border-t border-rotsu-rule">
+          <header class="border-b border-rotsu-rule px-6 py-12 md:px-10">
+            <h2 class="text-3xl font-medium tracking-tight uppercase md:text-4xl">What we’ve built</h2>
+            <p class="mt-4 max-w-2xl text-sm leading-6 text-rotsu-muted">Five products, 14K+ GitHub stars, and millions of downloads. From design systems and content to deployment, AI, and knowledge work.</p>
+          </header>
+
+          <div class="grid md:grid-cols-2">
+            {products.map((product) => (
+              <article class="product-card flex min-h-64 flex-col border-b border-rotsu-rule p-6 md:p-10">
+                <div class="flex items-center gap-3">
+                  <span class="grid size-6 place-items-center" style={`background:${product.iconBg}`}>
+                    <img class:list={["object-contain", product.iconSize, { invert: product.invertIcon }]} src={product.icon} alt="" width={product.iconDimension} height={product.iconDimension} />
+                  </span>
+                  <h3 class="text-base font-medium">{product.name}</h3>
+                </div>
+                <p class="mt-7 text-sm leading-6 text-rotsu-muted">{product.copy}</p>
+                <div class="mt-auto flex flex-wrap items-center gap-5 pt-8">
+                  <a class={linkClass} href={product.href} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${product.name}`}>Visit <ArrowUpRight class="size-3 shrink-0 opacity-50" stroke-width={2} aria-hidden="true" /></a>
+                  {product.achievements.map((achievement) => (
+                    <a class={linkClass} href={achievement.href} target="_blank" rel="noopener noreferrer">{achievement.label} <ArrowUpRight class="size-3 shrink-0 opacity-50" stroke-width={2} aria-hidden="true" /></a>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section class="border-y border-rotsu-rule py-7" aria-labelledby="love-title">
+          <p id="love-title" class="mb-6 text-center text-xs text-rotsu-muted">Loved by people at</p>
+          <ul class="sr-only">
+            {logos.map(([name]) => <li>{name}</li>)}
+          </ul>
+          <div class="logo-viewport overflow-hidden">
+            <div class="logo-track flex w-max items-center gap-12 px-6" aria-hidden="true">
+              {[...logos, ...logos].map(([name, src]) => (
+                <span class="company-mark block size-6 shrink-0 text-rotsu-muted hover:text-rotsu-yellow" style={`--logo: url("${src}")`} title={name}></span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section class="grid md:grid-cols-2">
+          <article id="about" class="border-b border-rotsu-rule px-6 py-10 md:border-r md:border-b-0 md:px-10 md:py-12">
+            <h2 class="text-2xl font-medium tracking-tight uppercase">Started by Ronan Berder</h2>
+            <p class="mt-6 text-sm leading-6 text-rotsu-muted">After 20+ years launching products, growing teams, and running businesses, Ronan works across strategy, design, technology, and marketing—and does whatever the work needs to move forward.</p>
+            <a class={secondaryButtonClass} href="https://www.linkedin.com/in/ronanberder" target="_blank" rel="noopener noreferrer">Profile on LinkedIn</a>
+          </article>
+          <article class="flex flex-col px-6 py-10 md:px-10 md:py-12">
+            <h2 class="text-2xl font-medium tracking-tight uppercase">Where he can help</h2>
+            <p class="mt-6 text-sm leading-6 text-rotsu-muted">Ronan works with a handful of teams on product strategy, AI, growth, go-to-market, and leadership. If you are weighing a hard call or want an honest second read, reach out.</p>
+            <a class={primaryButtonClass} href="mailto:hey@rotsu.com">Get in touch</a>
+          </article>
+        </section>
+      </main>
+
+      <footer class="grid gap-8 border-t border-rotsu-rule px-6 py-10 text-xs leading-5 text-rotsu-muted sm:grid-cols-3 md:px-10">
+        <div class="grid content-start gap-1">
+          <a class="hover:text-rotsu-text" href="https://pagescms.org/" target="_blank" rel="noopener noreferrer">Pages CMS</a>
+          <a class="hover:text-rotsu-text" href="https://basecoatui.com/" target="_blank" rel="noopener noreferrer">Basecoat</a>
+          <a class="hover:text-rotsu-text" href="https://devpu.sh/" target="_blank" rel="noopener noreferrer">devpush</a>
+          <a class="hover:text-rotsu-text" href="https://heypi.dev/" target="_blank" rel="noopener noreferrer">heypi</a>
+          <a class="hover:text-rotsu-text" href="https://classy.md/" target="_blank" rel="noopener noreferrer">Classy</a>
+        </div>
+        <address class="not-italic">
+          <strong class="font-medium text-rotsu-text">Rotsu Pte. Ltd.</strong><br />
+          68 Circular Road, #02-01<br />
+          Singapore 049422<br />
+          UEN 202424376D
+        </address>
+        <div class="grid content-start gap-1">
+          <p>Email: <a class="hover:text-rotsu-text" href="mailto:hey@rotsu.com">hey@rotsu.com</a></p>
+          <p>Phone: <a class="hover:text-rotsu-text" href="tel:+6597779149">+65 9777 9149</a></p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
