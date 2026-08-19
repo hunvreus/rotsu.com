@@ -1,6 +1,6 @@
 # Deployment
 
-The site is a static Astro build deployed with Cloudflare Workers Static Assets. There is no Worker entry point because the site does not need server-side code.
+The site is a static Astro build deployed with Cloudflare Workers Static Assets. A small Worker entry point canonicalizes the public URL: `www.rotsu.com` redirects to `https://rotsu.com`, and HTTP requests to the apex redirect to HTTPS while preserving the path and query string.
 
 ## Prerequisites
 
@@ -33,7 +33,7 @@ Deploy when ready:
 npm run deploy
 ```
 
-The custom domain is intentionally not declared in `wrangler.jsonc`; attach `rotsu.com` to the Worker in Cloudflare after confirming the account and DNS zone.
+Both `rotsu.com` and `www.rotsu.com` are declared as Worker Custom Domains in `wrangler.jsonc`. Cloudflare provisions their DNS records and certificates during deployment.
 
 ## Roll back
 

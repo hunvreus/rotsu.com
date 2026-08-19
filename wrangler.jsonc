@@ -1,10 +1,29 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "rotsu-com",
+  "main": "./src/worker.ts",
   "compatibility_date": "2026-08-19",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": false,
+  "routes": [
+    {
+      "pattern": "rotsu.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.rotsu.com",
+      "custom_domain": true
+    }
+  ],
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": true,
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page"
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
   }
 }

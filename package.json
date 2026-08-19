@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "typecheck": "tsc --noEmit",
+    "cf:types": "wrangler types --include-runtime false",
     "preview": "astro preview",
     "cf:dev": "npm run build && wrangler dev",
     "deploy:dry-run": "npm run build && wrangler deploy --dry-run",
@@ -19,6 +21,9 @@
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260819.1",
+    "@types/node": "^26.2.0",
+    "typescript": "^7.0.2",
     "wrangler": "^4.124.0"
   }
 }
